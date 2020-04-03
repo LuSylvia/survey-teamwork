@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/indent_lit"
-            android:text="PLEASE CHOOSE AN SURVEY"
+            android:text="@string/choose_chooseSurvey"
             android:textColor="@color/black"
             android:textSize="@dimen/h2"
             >
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/indent_mid"
-            android:text="LET'S BEGIN!"
+            android:text="@string/let_s_begin"
             android:layout_marginTop="@dimen/ques_to_title"
             android:textColor="@color/black"
             android:textSize="@dimen/h1"></TextView>
@@ -47,9 +47,27 @@
             android:layout_height="wrap_content"
             android:layout_margin="60dp"
             android:textSize="@dimen/h2"
-            android:text="Please permit openning your camera to scan the qrcode to start the survey"></TextView>
+            android:text="@string/choose_xmlTips"></TextView>
+
+
+
+
 
     </LinearLayout>
+    <Button
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:id="@+id/btn_createQuestionnaire"
+        android:layout_marginBottom="@dimen/btn_bottom"
+        android:layout_marginLeft="@dimen/outPad"
+        android:layout_marginRight="@dimen/outPad"
+        android:layout_height="@dimen/btn_height"
+        android:background="@color/colorPrimary"
+        android:textSize="@dimen/h2"
+        android:textColor="@color/white"
+        android:text="@string/createQuestionnaire"
+        android:onClick="createQuesitonnaire"></Button>
+
     <Button
         android:layout_gravity="center"
         android:layout_width="match_parent"
@@ -60,7 +78,7 @@
         android:background="@color/colorPrimary"
         android:textSize="@dimen/h2"
         android:textColor="@color/white"
-        android:text="scan QRcode"
+        android:text="@string/scan_qrcode"
         android:onClick="StartQRSurvey"></Button>
 
 

@@ -33,16 +33,16 @@ public class LockUtil{
         this.setContext(context);
         this.setActivity(activity);
         Dialog dialog=new AlertDialog.Builder(context)
-                .setTitle("Exit the APP?")
-                .setMessage("Are you sure to Exit?")
-                .setPositiveButton("YES", new DialogInterface.OnClickListener() {//确认退出，进入解锁
+                .setTitle(R.string.lock_exit)
+                .setMessage(R.string.lock_exit2)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {//确认退出，进入解锁
                     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         doUnlock(context,activity);
 //                        ApplicationUtil.getInstance().exit();
                     }
-                }).setNegativeButton("No", new DialogInterface.OnClickListener() {//取消退出
+                }).setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {//取消退出
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                     }
@@ -56,7 +56,7 @@ public class LockUtil{
         keyManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
         //判断设备是否设置解锁密码
         if(!keyManager.isKeyguardSecure()){
-            Toast.makeText(context,"You haven't set up a screen lock",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,R.string.lock_noLock,Toast.LENGTH_SHORT).show();
         }else{
             //解锁界面的标题和描述
             Intent intent=keyManager.createConfirmDeviceCredentialIntent("Enter Screen Key","You can exit the app until you unlock");

@@ -13,7 +13,7 @@ public class DatabaseOperator {
     public DatabaseOperator(Context context) {
         dbHelper = new DatabaseHelper(context, "Survey_Result", null, 1);
         db = dbHelper.getWritableDatabase();
-        System.out.println("建立数据库");
+
     }
 
 //    // 检验survey_id是否已存在于Survey_Result

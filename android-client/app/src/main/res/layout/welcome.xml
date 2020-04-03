@@ -6,12 +6,13 @@
     >
 
     <!--  Start : Your code should be within this block -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
-        android:text="SvyU"
+        android:text="@string/svyu"
         android:textColor="@color/white"
         android:textSize="@dimen/h1"
         android:background="@color/colorPrimary">
@@ -29,27 +30,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="WELCOME TO"
+                android:text="@string/welcome"
                 android:textColor="@color/black"
                 android:textSize="@dimen/h1"
                 android:layout_marginTop="20dp"
                 >
             </TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TAKE PART IN OUR SURVEY!"
-                android:textColor="@color/black"
-                android:textSize="@dimen/h2"
-                >
-            </TextView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="@dimen/indent_lit"
                 android:layout_marginRight="@dimen/indent_lit"
-                android:text="Before we start,here are things you should know:"
+                android:text="@string/welcome_1"
                 android:textSize="@dimen/h3"
                 android:textColor="@color/gray">
             </TextView>
@@ -67,7 +61,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="@dimen/indent_lit"
                 android:layout_marginLeft="@dimen/indent_lit"
-                android:text="-Please be honest when making your choice."
+                android:text="@string/welcome_2"
                 android:textSize="@dimen/h4"
                 android:textColor="@color/gray">
             </TextView>
@@ -77,7 +71,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="@dimen/indent_lit"
                 android:layout_marginLeft="@dimen/indent_lit"
-                android:text="-We are just doing a reaserch so you don't have to fake your information."
+                android:text="@string/welcome3"
                 android:textSize="@dimen/h4"
                 android:textColor="@color/gray">
             </TextView>
@@ -87,10 +81,23 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="@dimen/indent_lit"
                 android:layout_marginLeft="@dimen/indent_lit"
-                android:text="-Please follow the step we designed for you and don't skip any questions."
+                android:text="@string/welcome4"
                 android:textSize="@dimen/h4"
                 android:textColor="@color/gray">
             </TextView>
+
+                <Button
+                    android:id="@+id/btn_changeLanguage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:layout_toRightOf="@id/tv_question"
+                    android:onClick="myClick"
+                    android:text="@string/changelanguage"
+                    android:textSize="15sp"></Button>
+
+
             </LinearLayout>
             </ScrollView>
         </LinearLayout>
@@ -99,7 +106,7 @@
         android:id="@+id/accept"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I accept these requests."
+        android:text="@string/welcome_accept"
         android:textColor="@color/black"
         android:textSize="@dimen/h3"
         android:layout_marginBottom="30dp"
@@ -113,7 +120,7 @@
             android:layout_marginBottom="@dimen/btn_bottom"
             android:layout_marginLeft="@dimen/outPad"
             android:layout_marginRight="@dimen/outPad"
-            android:text="LET'S START!"
+            android:text="@string/welcome_start"
             android:textSize="@dimen/h3"
             android:textColor="@color/white"
             android:layout_gravity="center"

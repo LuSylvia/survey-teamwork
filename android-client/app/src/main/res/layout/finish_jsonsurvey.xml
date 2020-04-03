@@ -29,19 +29,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/indent_lar"
             android:layout_marginTop="20dp"
-            android:text="THANK YOU"
+            android:text="@string/finish_thankyou"
             android:textColor="#000000"
             android:textSize="@dimen/h1"
             >
         </TextView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/indent_lar"
-            android:text="FOR YOUR ANSWERS!"
-            android:textColor="@color/black"
-            android:textSize="@dimen/h2"></TextView>
 
         <ImageView
             android:layout_gravity="center"
@@ -54,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/btn_height"
             android:background="@color/colorPrimary"
-            android:text="FINISH"
+            android:text="@string/finish"
             android:textSize="@dimen/h2"
             android:textColor="@color/white"
             android:layout_marginBottom="@dimen/btn_bottom"

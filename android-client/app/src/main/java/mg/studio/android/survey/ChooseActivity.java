@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.InputType;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.CheckBox;
@@ -79,7 +80,7 @@ public class ChooseActivity extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
         if (result != null){
             if (result.getContents() == null){
-                Toast.makeText(this,"Cancel the scan",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,getText(R.string.choose_scanCanceled).toString(),Toast.LENGTH_LONG).show();
             }else {
                 Jstr=result.getContents();
                 if(Jstr.length()!=0){
@@ -126,7 +127,8 @@ public class ChooseActivity extends AppCompatActivity {
         Squs=(TextView)findViewById(R.id.Squesiontext);
         Soption=(RadioGroup)findViewById(R.id.SOption);
         Soption.removeAllViewsInLayout(); //清空原有选项
-        SquesNUM.setText("Question "+quesnum);
+        SquesNUM.setText(getText(R.string.choose_question).toString()+quesnum);
+
         Squs.setText(ques);
         quesList.add(ques);
         for(int i=0;i<Joption.length();i++){
@@ -148,7 +150,7 @@ public class ChooseActivity extends AppCompatActivity {
         Mqus=(TextView)findViewById(R.id.Mquesiontext);
         Moption=(RadioGroup)findViewById(R.id.MOption);
         Moption.removeAllViewsInLayout(); //清空原有选项
-        MquesNUM.setText("Question "+quesnum);
+        MquesNUM.setText(getText(R.string.choose_question).toString()+quesnum);
         Mqus.setText(ques);
         quesList.add(ques);
         for(int i=0;i<Joption.length();i++){
@@ -173,7 +175,7 @@ public class ChooseActivity extends AppCompatActivity {
         Eoption.setSingleLine(false);
         Eoption.setHorizontallyScrolling(false);
 
-        EquesNUM.setText("Question "+quesnum);
+        EquesNUM.setText(getText(R.string.choose_question).toString()+quesnum);
         Equs.setText(ques);
         quesList.add(ques);
     }
@@ -208,7 +210,7 @@ public class ChooseActivity extends AppCompatActivity {
                 setContentView(R.layout.finish_jsonsurvey);
             }
         }else{
-            Toast.makeText(this, "please answer the question", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getText(R.string.choose_answerQuestion).toString(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -266,4 +268,11 @@ public class ChooseActivity extends AppCompatActivity {
         startActivity(CtoR);
     }
 
+    //跳转到创建问卷界面
+    public void createQuesitonnaire(View view) {
+        if (view.getId()==R.id.btn_createQuestionnaire){
+            Intent intent=new Intent(this,BuildQuestionnaireActivity.class);
+            startActivity(intent);
+        }
+    }
 }

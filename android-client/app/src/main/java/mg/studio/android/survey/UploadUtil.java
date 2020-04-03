@@ -31,7 +31,7 @@ public class UploadUtil{
         if(manager!=null){
             NetworkInfo networkInfo=manager.getActiveNetworkInfo();
             if(networkInfo==null||!networkInfo.isAvailable()){
-                Toast.makeText(context,"Please connect to network and ensure you phone and computer in the same LAN",Toast.LENGTH_LONG).show();
+                Toast.makeText(context,R.string.upload_tips,Toast.LENGTH_LONG).show();
             }else{
                 new Thread(new Runnable() {
                     @Override
@@ -83,11 +83,11 @@ public class UploadUtil{
 //                }
                 if((line=reader.readLine())!=null){
                     Looper.prepare();
-                    Toast.makeText(context,"success to upload",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,R.string.upload_success,Toast.LENGTH_SHORT).show();
                     Looper.loop();
                 }else{
                     Looper.prepare();
-                    Toast.makeText(context,"failed!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,R.string.upload_failed,Toast.LENGTH_SHORT).show();
                     Looper.loop();
                 }
                 reader.close();
@@ -96,7 +96,7 @@ public class UploadUtil{
         } catch (Exception e){
             e.printStackTrace();
             Looper.prepare();//子线程不能直接toast
-            Toast.makeText(context,"fail to upload,please ensure your computer and phone on the same network",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,R.string.upload_failedTips,Toast.LENGTH_SHORT).show();
             Looper.loop();
         }
     }

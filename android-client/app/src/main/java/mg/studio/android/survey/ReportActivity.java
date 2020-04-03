@@ -65,8 +65,7 @@ public class ReportActivity extends AppCompatActivity {
                 != PackageManager.PERMISSION_GRANTED)||(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED)){
             AlertDialog accept = new AlertDialog.Builder(this)
-                .setMessage("We need to get your permisson of: \n\n    READ_PHONE_STATE, \n    ACCESS_FINE_LOCATION, \n    ACCESS_COARSE_LOCATION" +
-                        "\n\nso that we can get your IMEI and your location. We need these information to add to database")
+                .setMessage(R.string.report_permissionRequest)
                 .setPositiveButton("OK", null)
                 .create();
         accept.show();}
@@ -158,7 +157,7 @@ public class ReportActivity extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
             Log.e("wrap data in json",e.getMessage());
-            Toast.makeText(this,"wrap wrong",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.report_wrapwrong,Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -174,11 +173,11 @@ public class ReportActivity extends AppCompatActivity {
             // unlock success
             if (resultCode == RESULT_OK) {
                 //exit
-                Toast.makeText( this, "Exit the APP", Toast.LENGTH_SHORT).show();
+                Toast.makeText( this, R.string.report_exit, Toast.LENGTH_SHORT).show();
                 ApplicationUtil.getInstance().exit();
             } else {
                 // unlock failed
-                Toast.makeText(this, "Canceled", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.report_canceled, Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -198,7 +197,7 @@ public class ReportActivity extends AppCompatActivity {
             fout.write(msg.getBytes());
             fout.flush();
             fout.close();
-            Toast.makeText(this, "Result has been saved in"+result.getAbsolutePath(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.report_resultSavedIn+result.getAbsolutePath(), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -211,7 +210,7 @@ public class ReportActivity extends AppCompatActivity {
         String[] imei=new String[]{"null","null"};
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED)
         {
-            Toast.makeText(this, "Permission of getting phone state is not allowed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.report_getPhoneState, Toast.LENGTH_SHORT).show();
             return imei;
         } else {
             TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
@@ -249,7 +248,7 @@ public class ReportActivity extends AppCompatActivity {
                 != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                         != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "Permission of getting location information is not allowed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.report_getLocation, Toast.LENGTH_SHORT).show();
             return null;
         } else {
             Location location=null;
@@ -283,7 +282,7 @@ public class ReportActivity extends AppCompatActivity {
                 sb.append(location.getLatitude());
                 return sb.toString();
             } else {
-                Toast.makeText(this, "Location information not obtained", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.report_locationFailed, Toast.LENGTH_SHORT).show();
                 return null;
             }
         }

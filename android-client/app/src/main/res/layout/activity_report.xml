@@ -17,7 +17,7 @@
         android:layout_height="@dimen/title_height"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
-        android:text="SvyU"
+        android:text="@string/svyu"
         android:textColor="@color/white"
         android:textSize="@dimen/h1"
         android:background="@color/colorPrimary">
@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HERE ARE ANSWERS TO EACH QUESTION"
+            android:text="@string/report_tips"
             android:textColor="@color/black"
 
             android:textSize="@dimen/h2"
@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:hint="your server :192.0.0.1:8080"></EditText>
+            android:hint="@string/server"></EditText>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,7 +81,7 @@
             android:layout_height="@dimen/btn_height"
             android:background="@color/colorPrimary"
             android:layout_weight="1"
-            android:text="UPLOAD"
+            android:text="@string/upload"
             android:textSize="@dimen/h2"
             android:textColor="@color/white"
             android:layout_marginRight="5dp"
@@ -93,7 +93,7 @@
             android:layout_height="@dimen/btn_height"
             android:background="@color/colorPrimary"
             android:layout_weight="1"
-            android:text="EXIT"
+            android:text="@string/exit"
             android:textSize="@dimen/h2"
             android:textColor="@color/white"
             android:layout_marginLeft="5dp"
